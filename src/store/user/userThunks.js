@@ -20,7 +20,7 @@ export const signUpUser = (userData) => {
       dispatch(uiActions.stoppedLoading());
       dispatch(
         uiActions.showNotification({
-          message: "Registration unsuccessful.",
+          message: "Sign up failed.",
         })
       );
       throw new Error("Sign up failed.");

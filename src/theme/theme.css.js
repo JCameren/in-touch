@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
         width: 100%;
         height: 100vh;
         background-color: ${({ theme }) => theme.colors.fg};
-        color: white;
+        color: ${({ theme }) => theme.colors.textSubtle};
         font-family: "Metropolis-Regular";
     }
 

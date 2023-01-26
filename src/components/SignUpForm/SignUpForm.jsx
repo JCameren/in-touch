@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { signUpUser } from "../../store/user/userThunks";
 import Flex from "../UI/Flex/Flex.css";
 import Container from "../UI/Container/Container.css";
@@ -10,6 +11,9 @@ import Input from "../UI/Input/Input.css";
 
 export default function SignUpForm() {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -60,6 +64,8 @@ export default function SignUpForm() {
             />
             <Spacer medium />
             <Button type="submit">Sign Up</Button>
+            <Spacer small />
+            <Button secondary onClick={() => navigate("/")}>Return Home</Button>
           </Flex>
         </form>
       </Container>

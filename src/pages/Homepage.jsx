@@ -1,13 +1,9 @@
-import { useSelector, useDispatch } from "react-redux";
-import { userActions } from "../store/user/userSlice";
+// import { useEffect } from "react";
 
 export default function Homepage() {
-  const dispatch = useDispatch()
-    const user = useSelector(state => state.user.user)
-    const { name } = user
   return (
     <>
-      <h1>Logged in as { name }</h1>
+    <h2>this is where a useEffect to query all chats for this specific user will be done.</h2>
     </>
   );
 }

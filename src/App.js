@@ -36,7 +36,7 @@ export default function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/messages" element={<MessagesPage />} />
             <Route path="/messages/:id" element={<ChatPage />} />
-            <Route path="/profile/:id" element={<ProfilePage />} />
+            <Route path="/profile" element={<ProfilePage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Layout>
