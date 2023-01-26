@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import Layout from "./components/Layout/Layout";
 import LandingPage from "./pages/LandingPage";
+import SignUpPage from "./pages/SignUpPage"
 import Homepage from "./pages/Homepage";
 import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -42,6 +43,7 @@ export default function App() {
       ) : (
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       )}

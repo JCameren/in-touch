@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signUpUser } from "../../store/user/userThunks";
+import Flex from "../UI/Flex/Flex.css";
+import Container from "../UI/Container/Container.css";
+import Button from "../UI/Button/Button.css";
+import { Label } from "../UI/Typography/Typography.css";
+import Spacer from "../UI/Spacer/Spacer.css";
+import Input from "../UI/Input/Input.css";
 
 export default function SignUpForm() {
   const dispatch = useDispatch();
@@ -22,30 +28,41 @@ export default function SignUpForm() {
   };
   return (
     <>
-      <form autoComplete="off" onSubmit={handleSubmit}>
-        <label htmlFor="">Name</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        <label htmlFor="">Email</label>
-        <input
-          type="text"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <label htmlFor="">Password</label>
-        <input
-          type="text"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-        />
-        <button type="submit">Sign Up</button>
-      </form>
+    <Spacer small />
+      <Container xs>
+        <form autoComplete="off" onSubmit={handleSubmit}>
+          <Flex column>
+            <Label>Name</Label>
+            <Spacer extraSmall />
+            <Input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <Spacer small />
+            <Label>Email</Label>
+            <Spacer extraSmall />
+            <Input
+              type="text"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <Spacer small />
+            <Label>Password</Label>
+            <Spacer extraSmall />
+            <Input
+              type="text"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+            <Spacer medium />
+            <Button type="submit">Sign Up</Button>
+          </Flex>
+        </form>
+      </Container>
     </>
   );
 }

@@ -50,9 +50,9 @@ export const GlobalStyle = createGlobalStyle`
 
 export const darkTheme = {
   colors: {
-    bg: "#1C2438",
-    fg: "#202A42",
-    primary: "#FF3987",
+    bg: "#fff",
+    fg: "#f5f4fc",
+    primary: "#6b17e6",
     linearGradient:
       "linear-gradient(90deg, rgba(255,84,145,1) 0%, rgba(255,57,135,1) 50%)",
     textFocus: "#fff",

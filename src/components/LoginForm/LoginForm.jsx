@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { logInUser } from "../../store/user/userThunks";
 import Container from "../UI/Container/Container.css";
-import Card from "../UI/Card/Card.css";
+import { Label } from "../UI/Typography/Typography.css";
 import Flex from "../UI/Flex/Flex.css";
 import Spacer from "../UI/Spacer/Spacer.css";
 import Button from "../UI/Button/Button.css"
@@ -10,6 +11,8 @@ import Input from "../UI/Input/Input.css";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate()
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
@@ -27,10 +30,9 @@ export default function LoginForm() {
     <>
       <Spacer extraSmall />
       <Container xs>
-        <Card elevated>
           <form autoComplete="off" onSubmit={handleSubmit}>
             <Flex column>
-              <label htmlFor="">Email</label>
+              <Label>Email</Label>
               <Spacer extraSmall />
               <Input
                 type="text"
@@ -39,7 +41,7 @@ export default function LoginForm() {
                 onChange={handleChange}
               />
               <Spacer small />
-              <label htmlFor="">password</label>
+              <Label>password</Label>
               <Spacer extraSmall />
               <Input
                 type="password"
@@ -47,11 +49,12 @@ export default function LoginForm() {
                 value={credentials.password}
                 onChange={handleChange}
               />
-              <Spacer small/>
+              <Spacer medium/>
               <Button type="submit">Login</Button>
+              <Spacer small/>
+              <Button secondary onClick={() => navigate("/sign-up")}>Not a member? Sign Up.</Button>
             </Flex>
           </form>
-        </Card>
       </Container>
     </>
   );

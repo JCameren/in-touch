@@ -7,13 +7,13 @@ const Input = styled.input`
   padding: 0.5rem;
   min-width: 300px;
   border: thin solid ${({ theme }) => theme.colors.textSubtle};
-  caret-color: ${({ theme }) => theme.colors.textFocus};
   color: ${({ theme }) => theme.colors.textSubtle};
   resize: none;
 
   &:focus {
-    border: thin solid ${({ theme }) => theme.colors.textFocus};
-    color: ${({ theme }) => theme.colors.textFocus};
+    border: thin solid ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primary};
+    caret-color: ${({ theme }) => theme.colors.primary};
   }
 `;
 

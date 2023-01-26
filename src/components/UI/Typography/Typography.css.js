@@ -1,8 +1,12 @@
 import styled from "styled-components"
 
 export const ColorText = styled.h2`
-    background-image: ${({ theme }) => theme.colors.linearGradient};
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: ${({ theme }) => theme.colors.primary};
+    font-family: "Metropolis-Bold";
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+`
+
+export const Label = styled.label`
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    color: ${({ theme }) => theme.colors.textSubtle};
 `

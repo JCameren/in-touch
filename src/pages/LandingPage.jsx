@@ -7,7 +7,7 @@ import Spacer from "../components/UI/Spacer/Spacer.css";
 export default function LandingPage() {
   return (
     <>
-    <Spacer  large/>
+    <Spacer  medium/>
       <Container xs>
         <ColorText>in touch</ColorText>
       </Container>
