@@ -14,6 +14,7 @@ const Button = styled.button`
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    font-family: "Technos";
 
     &:hover {
         box-shadow: 0 5 15px ${({ theme }) => theme.colors.rgba};

@@ -5,6 +5,7 @@ import MetropolisMedium from "../fonts/Metropolis-Medium.otf";
 import MetropolisRegular from "../fonts/Metropolis-Regular.otf";
 import MetropolisSemiBold from "../fonts/Metropolis-SemiBold.otf";
 import MetropolisThin from "../fonts/Metropolis-Thin.otf";
+import Technos from "../fonts/Technos-PKDZP.otf";
 
 export const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -30,6 +31,10 @@ export const GlobalStyle = createGlobalStyle`
     @font-face {
       font-family: "Metropolis-Thin";
       src: url(${MetropolisThin});
+    }
+    @font-face {
+      font-family: "Technos";
+      src: url(${Technos});
     }
 
     * {

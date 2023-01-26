@@ -8,7 +8,6 @@ export default function Homepage() {
   return (
     <>
       <h1>Logged in as { name }</h1>
-      <button onClick={() => dispatch(userActions.logOut())}>Logout</button>
     </>
   );
 }

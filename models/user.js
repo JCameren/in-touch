@@ -18,6 +18,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    avatar: { type: String },
     contacts: [{ type: Schema.Types.ObjectId, ref: "User" }],
   },
   {
