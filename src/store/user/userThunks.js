@@ -51,3 +51,26 @@ export const logInUser = (userData) => {
     }
   };
 };
+
+
+
+
+export const searchQueriedUsers = (query) => {
+  return async (dispatch) => {
+    const searchForUsers = async () => {
+      return await userAPI.searchQueriedUsers(query)
+    }
+    try {
+      dispatch(uiActions.nowLoading())
+      const users = await searchForUsers()
+      dispatch(uiActions.queriedUsersResponse(users))
+      dispatch(uiActions.stoppedLoading())
+    } catch (err) {
+      dispatch(uiActions.stoppedLoading())
+      dispatch(uiActions.showNotification({
+        message: "An error occured making this request."
+      }))
+      throw new Error("Failed to query for users.")
+    }
+  }
+}

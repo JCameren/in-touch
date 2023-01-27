@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const usersCtrl = require("../../controllers/api/users")
 
-// router.get("/get-all-contacts", usersCtr)
+router.get("/search/:query", usersCtrl.searchQueriedUsers)
 
 router.post("/", usersCtrl.create)
 

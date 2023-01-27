@@ -36,8 +36,19 @@ const create = async (req, res) => {
       res.status(400).json(err)
     }
   }
+
+  const searchQueriedUsers = async (req, res) => {
+    try {
+      const queriedUsers = await User.find({ name: req.params.query })
+      console.log(queriedUsers)
+      res.json(queriedUsers)
+    } catch (err) {
+      res.status(204).json(err)
+    }
+  }
   
   module.exports = {
     create,
     login,
+    searchQueriedUsers
   };

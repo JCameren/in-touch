@@ -19,7 +19,7 @@ const userSlice = createSlice({
     },
     logOut(state) {
       state.user = null;
-      localStorage.removeItem("activeNav");
+      localStorage.setItem("activeNav", JSON.stringify("HOME"));
       localStorage.removeItem("token");
     },
   },

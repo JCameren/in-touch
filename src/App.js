@@ -9,6 +9,9 @@ import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
 import MessagesPage from "./pages/MessagesPage";
 import ChatPage from "./pages/ChatPage";
+import NotificationPage from "./pages/NotificationPage"
+import UserPage from "./pages/UserPage"
+import SearchUserPage from "./pages/SearchUsersPage"
 import Notification from "./components/Notification/Notification";
 import Loading from "./components/Loading/Loading";
 import { uiActions } from "./store/ui/uiSlice";
@@ -34,9 +37,11 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/messages" element={<MessagesPage />} />
             <Route path="/messages/:id" element={<ChatPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/notifications" element={<NotificationPage />} />
+            <Route path="/search" element={<SearchUserPage />} />
+            <Route path="/user/:id" element={<UserPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Layout>

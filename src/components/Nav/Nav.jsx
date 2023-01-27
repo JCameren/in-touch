@@ -6,6 +6,7 @@ import Flex from "../UI/Flex/Flex.css";
 import { RiHomeLine } from "react-icons/ri";
 import { FiUser } from "react-icons/fi";
 import { IoNewspaperOutline } from "react-icons/io5"
+import { BiSearch } from "react-icons/bi"
 
 export default function Nav() {
   const dispatch = useDispatch();
@@ -38,6 +39,14 @@ export default function Nav() {
             active={activeNav === "ABOUT" ? +true : +false}
           >
             <IoNewspaperOutline />
+          </NavIcon>
+          <NavIcon
+            as={NavLink}
+            to={"/search"}
+            onClick={() => dispatch(uiActions.changeActiveNav("SEARCH"))}
+            active={activeNav === "SEARCH" ? +true : +false}
+          >
+            <BiSearch />
           </NavIcon>
         </Flex>
       </nav>

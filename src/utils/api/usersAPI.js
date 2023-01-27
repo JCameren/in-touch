@@ -6,6 +6,10 @@ export const signUp = async (userData) => {
     return sendLocalRequest(BASE_URL, 'POST', userData)
   };
   
-  export const login = async (userData) => {
+export const login = async (userData) => {
     return sendLocalRequest(`${BASE_URL}/login`, 'POST', userData)
   }
+
+export const searchQueriedUsers = async (query) => {
+  return sendLocalRequest(`${BASE_URL}/search/${query}`)
+} 
