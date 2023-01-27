@@ -32,14 +32,14 @@ export default function Nav() {
           >
             <FiUser />
           </NavIcon>
-          <NavIcon
+          {/* <NavIcon
             as={NavLink}
             to={"/about"}
             onClick={() => dispatch(uiActions.changeActiveNav("ABOUT"))}
             active={activeNav === "ABOUT" ? +true : +false}
           >
             <IoNewspaperOutline />
-          </NavIcon>
+          </NavIcon> */}
           <NavIcon
             as={NavLink}
             to={"/search"}

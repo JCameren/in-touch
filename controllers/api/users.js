@@ -39,16 +39,27 @@ const create = async (req, res) => {
 
   const searchQueriedUsers = async (req, res) => {
     try {
-      const queriedUsers = await User.find({ name: req.params.query })
+      const queriedUsers = await User.find({ name: { $regex: req.params.query, $options: 'i'}})
       console.log(queriedUsers)
+      if (!queriedUsers) throw new Error("No user.")
       res.json(queriedUsers)
     } catch (err) {
       res.status(204).json(err)
+    }
+  }
+
+  const getUserProfile = async (req, res) => {
+    try {
+      const userProfile = await User.findById(req.params.id)
+      res.json(userProfile)
+    } catch (err) {
+      res.status(404).json(err)
     }
   }
   
   module.exports = {
     create,
     login,
-    searchQueriedUsers
+    searchQueriedUsers,
+    getUserProfile
   };

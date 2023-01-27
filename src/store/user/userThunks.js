@@ -74,3 +74,21 @@ export const searchQueriedUsers = (query) => {
     }
   }
 }
+
+
+export const getSpecificUserProfile = (userId) => {
+  return async (dispatch) => {
+    const getProfile = async () => {
+      return await userAPI.getUserProfile(userId)
+    }
+    try {
+      dispatch(uiActions.nowLoading())
+      const profile = await getProfile()
+      dispatch(uiActions.getUserProfile(profile))
+      dispatch(uiActions.stoppedLoading())
+    } catch (err) {
+      dispatch(uiActions.stoppedLoading())
+      throw new Error("Could not load profile for requested user")
+    }
+  }
+}

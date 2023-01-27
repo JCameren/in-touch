@@ -13,3 +13,7 @@ export const login = async (userData) => {
 export const searchQueriedUsers = async (query) => {
   return sendLocalRequest(`${BASE_URL}/search/${query}`)
 } 
+
+export const getUserProfile = async (userId) => {
+  return sendLocalRequest(`${BASE_URL}/user/${userId}`)
+}

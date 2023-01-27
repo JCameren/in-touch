@@ -4,7 +4,8 @@ const initialState = {
     uiNotification: "",
     queriedUsers: [],
     isLoading: false,
-    activeNav: JSON.parse(localStorage.getItem("activeNav"))
+    activeNav: JSON.parse(localStorage.getItem("activeNav")),
+    userProfile: {}
 }
 
 const uiSlice = createSlice({
@@ -31,6 +32,9 @@ const uiSlice = createSlice({
         },
         queriedUsersResponse(state, action) {
             state.queriedUsers = action.payload
+        },
+        getUserProfile(state, action) {
+            state.userProfile = action.payload
         }
     }
 })
