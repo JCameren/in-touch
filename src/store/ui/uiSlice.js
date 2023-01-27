@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     uiNotification: "",
-    isLoading: false
+    isLoading: false,
+    activeNav: JSON.parse(localStorage.getItem("activeNav"))
 }
 
 const uiSlice = createSlice({
@@ -22,6 +23,10 @@ const uiSlice = createSlice({
         },
         stoppedLoading(state) {
             state.isLoading = false
+        },
+        changeActiveNav(state, action) {
+            state.activeNav = action.payload
+            localStorage.setItem("activeNav", JSON.stringify(action.payload))
         }
     }
 })

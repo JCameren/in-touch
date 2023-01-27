@@ -10,11 +10,27 @@ export const Aside = styled.aside`
     max-width: 150px;
     float: left;
 `
-export const NavIcon = styled.button`
-    all: unset;
+export const NavIcon = styled.li`
     font-size: ${({ theme }) => theme.fontSizes.sm};
-    color: ${({ theme }) => theme.colors.primary} !important;
+    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ active }) => active ? "#fff" : null};
+
     display: inline-flex;
     justify-content: center;
-    margin: 0.5rem 0 3.5rem 0;
+    margin: 0.5rem 0.375rem 2.5rem 0.375rem;
+    border-radius: 4px;
+    padding: 0.7rem;
+    background-color: ${({ theme }) => theme.colors.bg};
+    background-color: ${({ active }) => active ? "#6b17e6" : null};
+    border: none;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+
+
+    
+
+    .active {
+        background-color: ${({ theme }) => theme.colors.primary} !important;
+        color: ${({ theme }) => theme.colors.bg} !important;
+    }
 `
