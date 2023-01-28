@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const usersCtrl = require("../../controllers/api/users")
+const ensureLoggedIn = require("../../config/ensureLoggedIn")
 
-router.get("/search/:query", usersCtrl.searchQueriedUsers)
+router.get("/search/:query", ensureLoggedIn, usersCtrl.searchQueriedUsers)
 
-router.get("/user/:id", usersCtrl.getUserProfile)
+router.get("/user/:id", ensureLoggedIn, usersCtrl.getUserProfile)
 
 router.post("/", usersCtrl.create)
 

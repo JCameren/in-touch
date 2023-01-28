@@ -21,6 +21,7 @@ const userSlice = createSlice({
       state.user = null;
       localStorage.setItem("activeNav", JSON.stringify("HOME"));
       localStorage.removeItem("token");
+      window.location.reload()
     },
   },
 });
